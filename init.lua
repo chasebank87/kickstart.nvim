@@ -894,11 +894,11 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    'Mofiqul/dracula.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
+      require('dracula').setup {
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
@@ -907,7 +907,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'dracula'
     end,
   },
 
@@ -1027,3 +1027,44 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+
+-- My configurations
+vim.cmd("let g:netrw_liststyle = 3")
+
+local opt = vim.opt
+
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
+opt.cursorcolumn = true
+
+-- tabs & Indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.smartindent = true
+
+opt.wrap = false
+
+-- search
+opt.ignorecase = true
+opt.smartcase = true
+
+-- appearance
+opt.termguicolors = true
+opt.background = 'dark'
+opt.signcolumn = 'yes'
+
+--backspace
+opt.backspace = 'indent,eol,start'
+
+-- clipboard
+opt.clipboard:append('unnamedplus')
+
+-- split windows
+opt.splitbelow = true
+opt.splitright = true
+
+-- mouse
+opt.mouse = 'a'
